@@ -1,0 +1,3088 @@
+terraform_version = "1.0.9"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"google_dialogflow_cx_agent.agent": {
+			"address":        "google_dialogflow_cx_agent.agent",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "agent",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_dialogflow_cx_agent",
+			"values": {
+				"avatar_uri":                 "https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/super_cloud.png",
+				"default_language_code":      "en",
+				"description":                "Example description.",
+				"display_name":               "dialogflowcx-agent-1",
+				"enable_spell_correction":    true,
+				"enable_stackdriver_logging": true,
+				"location":                   "global",
+				"security_settings":          null,
+				"speech_to_text_settings": [
+					{
+						"enable_speech_adaptation": true,
+					},
+				],
+				"supported_language_codes": [
+					"fr",
+					"de",
+					"es",
+				],
+				"time_zone": "America/New_York",
+				"timeouts":  null,
+			},
+		},
+		"google_dialogflow_cx_agent.agent_2": {
+			"address":        "google_dialogflow_cx_agent.agent_2",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "agent_2",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_dialogflow_cx_agent",
+			"values": {
+				"avatar_uri":                 "https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/super_cloud.png",
+				"default_language_code":      "en",
+				"description":                "Example description.",
+				"display_name":               "dialogflowcx-agent-2",
+				"enable_spell_correction":    true,
+				"enable_stackdriver_logging": true,
+				"location":                   "US",
+				"security_settings":          null,
+				"speech_to_text_settings": [
+					{
+						"enable_speech_adaptation": true,
+					},
+				],
+				"supported_language_codes": [
+					"fr",
+					"de",
+					"es",
+				],
+				"time_zone": "America/New_York",
+				"timeouts":  null,
+			},
+		},
+		"google_dialogflow_cx_entity_type.basic_entity_type": {
+			"address":        "google_dialogflow_cx_entity_type.basic_entity_type",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "basic_entity_type",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_dialogflow_cx_entity_type",
+			"values": {
+				"auto_expansion_mode":     null,
+				"display_name":            "MyEntity",
+				"enable_fuzzy_extraction": false,
+				"entities": [
+					{
+						"synonyms": [
+							"synonym1",
+							"synonym2",
+						],
+						"value": "value1",
+					},
+					{
+						"synonyms": [
+							"synonym3",
+							"synonym4",
+						],
+						"value": "value2",
+					},
+				],
+				"excluded_phrases": [],
+				"kind":             "KIND_MAP",
+				"language_code":    null,
+				"redact":           null,
+				"timeouts":         null,
+			},
+		},
+		"google_dialogflow_cx_environment.development": {
+			"address":        "google_dialogflow_cx_environment.development",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "development",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_dialogflow_cx_environment",
+			"values": {
+				"description":  "Development Environment",
+				"display_name": "Development",
+				"timeouts":     null,
+				"version_configs": [
+					{},
+				],
+			},
+		},
+		"google_dialogflow_cx_flow.basic_flow": {
+			"address":        "google_dialogflow_cx_flow.basic_flow",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "basic_flow",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_dialogflow_cx_flow",
+			"values": {
+				"description":  "Test Flow",
+				"display_name": "MyFlow",
+				"event_handlers": [
+					{
+						"event":       "custom-event",
+						"target_flow": null,
+						"target_page": null,
+						"trigger_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"text": [
+													"I didn't get that. Can you say it again?",
+												],
+											},
+										],
+									},
+								],
+								"return_partial_responses": false,
+								"tag":     null,
+								"webhook": null,
+							},
+						],
+					},
+					{
+						"event":       "sys.no-match-default",
+						"target_flow": null,
+						"target_page": null,
+						"trigger_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"text": [
+													"Sorry, could you say that again?",
+												],
+											},
+										],
+									},
+								],
+								"return_partial_responses": false,
+								"tag":     null,
+								"webhook": null,
+							},
+						],
+					},
+					{
+						"event":       "sys.no-input-default",
+						"target_flow": null,
+						"target_page": null,
+						"trigger_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"text": [
+													"One more time?",
+												],
+											},
+										],
+									},
+								],
+								"return_partial_responses": false,
+								"tag":     null,
+								"webhook": null,
+							},
+						],
+					},
+				],
+				"language_code": null,
+				"nlu_settings": [
+					{
+						"classification_threshold": 0.3,
+						"model_training_mode":      null,
+						"model_type":               "MODEL_TYPE_STANDARD",
+					},
+				],
+				"timeouts":                null,
+				"transition_route_groups": null,
+				"transition_routes":       [],
+			},
+		},
+		"google_dialogflow_cx_intent.basic_intent": {
+			"address":        "google_dialogflow_cx_intent.basic_intent",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "basic_intent",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_dialogflow_cx_intent",
+			"values": {
+				"description":  "Intent example",
+				"display_name": "Example",
+				"is_fallback":  null,
+				"labels": {
+					"label1": "value1",
+					"label2": "value2",
+				},
+				"language_code": null,
+				"parameters": [
+					{
+						"entity_type": "projects/-/locations/-/agents/-/entityTypes/sys.date",
+						"id":          "param1",
+						"is_list":     null,
+						"redact":      null,
+					},
+				],
+				"priority": 1,
+				"timeouts": null,
+				"training_phrases": [
+					{
+						"parts": [
+							{
+								"parameter_id": null,
+								"text":         "training",
+							},
+							{
+								"parameter_id": null,
+								"text":         "phrase",
+							},
+							{
+								"parameter_id": null,
+								"text":         "example",
+							},
+						],
+						"repeat_count": 1,
+					},
+				],
+			},
+		},
+		"google_dialogflow_cx_page.basic_page": {
+			"address":        "google_dialogflow_cx_page.basic_page",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "basic_page",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_dialogflow_cx_page",
+			"values": {
+				"display_name": "MyPage",
+				"entry_fulfillment": [
+					{
+						"messages": [
+							{
+								"text": [
+									{
+										"text": [
+											"Welcome to page",
+										],
+									},
+								],
+							},
+						],
+						"return_partial_responses": null,
+						"tag":     null,
+						"webhook": null,
+					},
+				],
+				"event_handlers": [],
+				"form": [
+					{
+						"parameters": [
+							{
+								"display_name": "param1",
+								"entity_type":  "projects/-/locations/-/agents/-/entityTypes/sys.date",
+								"fill_behavior": [
+									{
+										"initial_prompt_fulfillment": [
+											{
+												"messages": [
+													{
+														"text": [
+															{
+																"text": [
+																	"Please provide param1",
+																],
+															},
+														],
+													},
+												],
+												"return_partial_responses": null,
+												"tag":     null,
+												"webhook": null,
+											},
+										],
+									},
+								],
+								"is_list":  null,
+								"redact":   true,
+								"required": true,
+							},
+						],
+					},
+				],
+				"language_code":           null,
+				"timeouts":                null,
+				"transition_route_groups": null,
+				"transition_routes": [
+					{
+						"condition":   "$page.params.status = 'FINAL'",
+						"intent":      null,
+						"target_flow": null,
+						"trigger_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"text": [
+													"information completed, navigating to page 2",
+												],
+											},
+										],
+									},
+								],
+								"return_partial_responses": null,
+								"tag":     null,
+								"webhook": null,
+							},
+						],
+					},
+				],
+			},
+		},
+		"google_dialogflow_cx_page.my_page2": {
+			"address":        "google_dialogflow_cx_page.my_page2",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "my_page2",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_dialogflow_cx_page",
+			"values": {
+				"display_name":            "MyPage2",
+				"entry_fulfillment":       [],
+				"event_handlers":          [],
+				"form":                    [],
+				"language_code":           null,
+				"timeouts":                null,
+				"transition_route_groups": null,
+				"transition_routes":       [],
+			},
+		},
+		"google_dialogflow_cx_version.version_1": {
+			"address":        "google_dialogflow_cx_version.version_1",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "version_1",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_dialogflow_cx_version",
+			"values": {
+				"description":  "version 1.0.0",
+				"display_name": "1.0.0",
+				"timeouts":     null,
+			},
+		},
+	},
+}
+
+variables = {
+	"access_token": {
+		"name":  "access_token",
+		"value": "REDACTED_SENSITIVE",
+	},
+	"project_id": {
+		"name":  "project_id",
+		"value": "REDACTED_SENSITIVE",
+	},
+}
+
+resource_changes = {
+	"google_dialogflow_cx_agent.agent": {
+		"address": "google_dialogflow_cx_agent.agent",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"avatar_uri":                 "https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/super_cloud.png",
+				"default_language_code":      "en",
+				"description":                "Example description.",
+				"display_name":               "dialogflowcx-agent-1",
+				"enable_spell_correction":    true,
+				"enable_stackdriver_logging": true,
+				"location":                   "global",
+				"security_settings":          null,
+				"speech_to_text_settings": [
+					{
+						"enable_speech_adaptation": true,
+					},
+				],
+				"supported_language_codes": [
+					"fr",
+					"de",
+					"es",
+				],
+				"time_zone": "America/New_York",
+				"timeouts":  null,
+			},
+			"after_unknown": {
+				"id":      true,
+				"name":    true,
+				"project": true,
+				"speech_to_text_settings": [
+					{},
+				],
+				"start_flow": true,
+				"supported_language_codes": [
+					false,
+					false,
+					false,
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "agent",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_dialogflow_cx_agent",
+	},
+	"google_dialogflow_cx_agent.agent_2": {
+		"address": "google_dialogflow_cx_agent.agent_2",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"avatar_uri":                 "https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/super_cloud.png",
+				"default_language_code":      "en",
+				"description":                "Example description.",
+				"display_name":               "dialogflowcx-agent-2",
+				"enable_spell_correction":    true,
+				"enable_stackdriver_logging": true,
+				"location":                   "EU",
+				"security_settings":          null,
+				"speech_to_text_settings": [
+					{
+						"enable_speech_adaptation": true,
+					},
+				],
+				"supported_language_codes": [
+					"fr",
+					"de",
+					"es",
+				],
+				"time_zone": "America/New_York",
+				"timeouts":  null,
+			},
+			"after_unknown": {
+				"id":      true,
+				"name":    true,
+				"project": true,
+				"speech_to_text_settings": [
+					{},
+				],
+				"start_flow": true,
+				"supported_language_codes": [
+					false,
+					false,
+					false,
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "agent_2",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_dialogflow_cx_agent",
+	},
+	"google_dialogflow_cx_entity_type.basic_entity_type": {
+		"address": "google_dialogflow_cx_entity_type.basic_entity_type",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"auto_expansion_mode":     null,
+				"display_name":            "MyEntity",
+				"enable_fuzzy_extraction": false,
+				"entities": [
+					{
+						"synonyms": [
+							"synonym1",
+							"synonym2",
+						],
+						"value": "value1",
+					},
+					{
+						"synonyms": [
+							"synonym3",
+							"synonym4",
+						],
+						"value": "value2",
+					},
+				],
+				"excluded_phrases": [],
+				"kind":             "KIND_MAP",
+				"language_code":    null,
+				"redact":           null,
+				"timeouts":         null,
+			},
+			"after_unknown": {
+				"entities": [
+					{
+						"synonyms": [
+							false,
+							false,
+						],
+					},
+					{
+						"synonyms": [
+							false,
+							false,
+						],
+					},
+				],
+				"excluded_phrases": [],
+				"id":               true,
+				"name":             true,
+				"parent":           true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "basic_entity_type",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_dialogflow_cx_entity_type",
+	},
+	"google_dialogflow_cx_environment.development": {
+		"address": "google_dialogflow_cx_environment.development",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"description":  "Development Environment",
+				"display_name": "Development",
+				"timeouts":     null,
+				"version_configs": [
+					{},
+				],
+			},
+			"after_unknown": {
+				"id":          true,
+				"name":        true,
+				"parent":      true,
+				"update_time": true,
+				"version_configs": [
+					{
+						"version": true,
+					},
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "development",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_dialogflow_cx_environment",
+	},
+	"google_dialogflow_cx_flow.basic_flow": {
+		"address": "google_dialogflow_cx_flow.basic_flow",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"description":  "Test Flow",
+				"display_name": "MyFlow",
+				"event_handlers": [
+					{
+						"event":       "custom-event",
+						"target_flow": null,
+						"target_page": null,
+						"trigger_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"text": [
+													"I didn't get that. Can you say it again?",
+												],
+											},
+										],
+									},
+								],
+								"return_partial_responses": false,
+								"tag":     null,
+								"webhook": null,
+							},
+						],
+					},
+					{
+						"event":       "sys.no-match-default",
+						"target_flow": null,
+						"target_page": null,
+						"trigger_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"text": [
+													"Sorry, could you say that again?",
+												],
+											},
+										],
+									},
+								],
+								"return_partial_responses": false,
+								"tag":     null,
+								"webhook": null,
+							},
+						],
+					},
+					{
+						"event":       "sys.no-input-default",
+						"target_flow": null,
+						"target_page": null,
+						"trigger_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"text": [
+													"One more time?",
+												],
+											},
+										],
+									},
+								],
+								"return_partial_responses": false,
+								"tag":     null,
+								"webhook": null,
+							},
+						],
+					},
+				],
+				"language_code": null,
+				"nlu_settings": [
+					{
+						"classification_threshold": 0.3,
+						"model_training_mode":      null,
+						"model_type":               "MODEL_TYPE_STANDARD",
+					},
+				],
+				"timeouts":                null,
+				"transition_route_groups": null,
+				"transition_routes":       [],
+			},
+			"after_unknown": {
+				"event_handlers": [
+					{
+						"name": true,
+						"trigger_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"allow_playback_interruption": true,
+												"text": [
+													false,
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+					},
+					{
+						"name": true,
+						"trigger_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"allow_playback_interruption": true,
+												"text": [
+													false,
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+					},
+					{
+						"name": true,
+						"trigger_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"allow_playback_interruption": true,
+												"text": [
+													false,
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+					},
+				],
+				"id":   true,
+				"name": true,
+				"nlu_settings": [
+					{},
+				],
+				"parent":            true,
+				"transition_routes": [],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "basic_flow",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_dialogflow_cx_flow",
+	},
+	"google_dialogflow_cx_intent.basic_intent": {
+		"address": "google_dialogflow_cx_intent.basic_intent",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"description":  "Intent example",
+				"display_name": "Example",
+				"is_fallback":  null,
+				"labels": {
+					"label1": "value1",
+					"label2": "value2",
+				},
+				"language_code": null,
+				"parameters": [
+					{
+						"entity_type": "projects/-/locations/-/agents/-/entityTypes/sys.date",
+						"id":          "param1",
+						"is_list":     null,
+						"redact":      null,
+					},
+				],
+				"priority": 1,
+				"timeouts": null,
+				"training_phrases": [
+					{
+						"parts": [
+							{
+								"parameter_id": null,
+								"text":         "training",
+							},
+							{
+								"parameter_id": null,
+								"text":         "phrase",
+							},
+							{
+								"parameter_id": null,
+								"text":         "example",
+							},
+						],
+						"repeat_count": 1,
+					},
+				],
+			},
+			"after_unknown": {
+				"id":     true,
+				"labels": {},
+				"name":   true,
+				"parameters": [
+					{},
+				],
+				"parent": true,
+				"training_phrases": [
+					{
+						"id": true,
+						"parts": [
+							{},
+							{},
+							{},
+						],
+					},
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "basic_intent",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_dialogflow_cx_intent",
+	},
+	"google_dialogflow_cx_page.basic_page": {
+		"address": "google_dialogflow_cx_page.basic_page",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"display_name": "MyPage",
+				"entry_fulfillment": [
+					{
+						"messages": [
+							{
+								"text": [
+									{
+										"text": [
+											"Welcome to page",
+										],
+									},
+								],
+							},
+						],
+						"return_partial_responses": null,
+						"tag":     null,
+						"webhook": null,
+					},
+				],
+				"event_handlers": [],
+				"form": [
+					{
+						"parameters": [
+							{
+								"display_name": "param1",
+								"entity_type":  "projects/-/locations/-/agents/-/entityTypes/sys.date",
+								"fill_behavior": [
+									{
+										"initial_prompt_fulfillment": [
+											{
+												"messages": [
+													{
+														"text": [
+															{
+																"text": [
+																	"Please provide param1",
+																],
+															},
+														],
+													},
+												],
+												"return_partial_responses": null,
+												"tag":     null,
+												"webhook": null,
+											},
+										],
+									},
+								],
+								"is_list":  null,
+								"redact":   true,
+								"required": true,
+							},
+						],
+					},
+				],
+				"language_code":           null,
+				"timeouts":                null,
+				"transition_route_groups": null,
+				"transition_routes": [
+					{
+						"condition":   "$page.params.status = 'FINAL'",
+						"intent":      null,
+						"target_flow": null,
+						"trigger_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"text": [
+													"information completed, navigating to page 2",
+												],
+											},
+										],
+									},
+								],
+								"return_partial_responses": null,
+								"tag":     null,
+								"webhook": null,
+							},
+						],
+					},
+				],
+			},
+			"after_unknown": {
+				"entry_fulfillment": [
+					{
+						"messages": [
+							{
+								"text": [
+									{
+										"allow_playback_interruption": true,
+										"text": [
+											false,
+										],
+									},
+								],
+							},
+						],
+					},
+				],
+				"event_handlers": [],
+				"form": [
+					{
+						"parameters": [
+							{
+								"fill_behavior": [
+									{
+										"initial_prompt_fulfillment": [
+											{
+												"messages": [
+													{
+														"text": [
+															{
+																"allow_playback_interruption": true,
+																"text": [
+																	false,
+																],
+															},
+														],
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+					},
+				],
+				"id":     true,
+				"name":   true,
+				"parent": true,
+				"transition_routes": [
+					{
+						"name":        true,
+						"target_page": true,
+						"trigger_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"allow_playback_interruption": true,
+												"text": [
+													false,
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+					},
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "basic_page",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_dialogflow_cx_page",
+	},
+	"google_dialogflow_cx_page.my_page2": {
+		"address": "google_dialogflow_cx_page.my_page2",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"display_name":            "MyPage2",
+				"entry_fulfillment":       [],
+				"event_handlers":          [],
+				"form":                    [],
+				"language_code":           null,
+				"timeouts":                null,
+				"transition_route_groups": null,
+				"transition_routes":       [],
+			},
+			"after_unknown": {
+				"entry_fulfillment": [],
+				"event_handlers":    [],
+				"form":              [],
+				"id":                true,
+				"name":              true,
+				"parent":            true,
+				"transition_routes": [],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "my_page2",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_dialogflow_cx_page",
+	},
+	"google_dialogflow_cx_version.version_1": {
+		"address": "google_dialogflow_cx_version.version_1",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"description":  "version 1.0.0",
+				"display_name": "1.0.0",
+				"timeouts":     null,
+			},
+			"after_unknown": {
+				"create_time":  true,
+				"id":           true,
+				"name":         true,
+				"nlu_settings": true,
+				"parent":       true,
+				"state":        true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "version_1",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_dialogflow_cx_version",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"google": {
+				"expressions": {
+					"access_token": {
+						"references": [
+							"var.access_token",
+						],
+					},
+					"project": {
+						"references": [
+							"var.project_id",
+						],
+					},
+					"region": {
+						"constant_value": "us-west2",
+					},
+				},
+				"name":               "google",
+				"version_constraint": "~> 3.87.0",
+			},
+		},
+		"root_module": {
+			"resources": [
+				{
+					"address": "google_dialogflow_cx_agent.agent",
+					"expressions": {
+						"avatar_uri": {
+							"constant_value": "https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/super_cloud.png",
+						},
+						"default_language_code": {
+							"constant_value": "en",
+						},
+						"description": {
+							"constant_value": "Example description.",
+						},
+						"display_name": {
+							"constant_value": "dialogflowcx-agent-1",
+						},
+						"enable_spell_correction": {
+							"constant_value": true,
+						},
+						"enable_stackdriver_logging": {
+							"constant_value": true,
+						},
+						"location": {
+							"constant_value": "global",
+						},
+						"speech_to_text_settings": [
+							{
+								"enable_speech_adaptation": {
+									"constant_value": true,
+								},
+							},
+						],
+						"supported_language_codes": {
+							"constant_value": [
+								"fr",
+								"de",
+								"es",
+							],
+						},
+						"time_zone": {
+							"constant_value": "America/New_York",
+						},
+					},
+					"mode":                "managed",
+					"name":                "agent",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_dialogflow_cx_agent",
+				},
+				{
+					"address": "google_dialogflow_cx_agent.agent_2",
+					"expressions": {
+						"avatar_uri": {
+							"constant_value": "https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/super_cloud.png",
+						},
+						"default_language_code": {
+							"constant_value": "en",
+						},
+						"description": {
+							"constant_value": "Example description.",
+						},
+						"display_name": {
+							"constant_value": "dialogflowcx-agent-2",
+						},
+						"enable_spell_correction": {
+							"constant_value": true,
+						},
+						"enable_stackdriver_logging": {
+							"constant_value": true,
+						},
+						"location": {
+							"constant_value": "US",
+						},
+						"speech_to_text_settings": [
+							{
+								"enable_speech_adaptation": {
+									"constant_value": true,
+								},
+							},
+						],
+						"supported_language_codes": {
+							"constant_value": [
+								"fr",
+								"de",
+								"es",
+							],
+						},
+						"time_zone": {
+							"constant_value": "America/New_York",
+						},
+					},
+					"mode":                "managed",
+					"name":                "agent_2",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_dialogflow_cx_agent",
+				},
+				{
+					"address": "google_dialogflow_cx_entity_type.basic_entity_type",
+					"expressions": {
+						"display_name": {
+							"constant_value": "MyEntity",
+						},
+						"enable_fuzzy_extraction": {
+							"constant_value": false,
+						},
+						"entities": [
+							{
+								"synonyms": {
+									"constant_value": [
+										"synonym1",
+										"synonym2",
+									],
+								},
+								"value": {
+									"constant_value": "value1",
+								},
+							},
+							{
+								"synonyms": {
+									"constant_value": [
+										"synonym3",
+										"synonym4",
+									],
+								},
+								"value": {
+									"constant_value": "value2",
+								},
+							},
+						],
+						"kind": {
+							"constant_value": "KIND_MAP",
+						},
+						"parent": {
+							"references": [
+								"google_dialogflow_cx_agent.agent.id",
+								"google_dialogflow_cx_agent.agent",
+							],
+						},
+					},
+					"mode":                "managed",
+					"name":                "basic_entity_type",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_dialogflow_cx_entity_type",
+				},
+				{
+					"address": "google_dialogflow_cx_environment.development",
+					"expressions": {
+						"description": {
+							"constant_value": "Development Environment",
+						},
+						"display_name": {
+							"constant_value": "Development",
+						},
+						"parent": {
+							"references": [
+								"google_dialogflow_cx_agent.agent.id",
+								"google_dialogflow_cx_agent.agent",
+							],
+						},
+						"version_configs": [
+							{
+								"version": {
+									"references": [
+										"google_dialogflow_cx_version.version_1.id",
+										"google_dialogflow_cx_version.version_1",
+									],
+								},
+							},
+						],
+					},
+					"mode":                "managed",
+					"name":                "development",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_dialogflow_cx_environment",
+				},
+				{
+					"address": "google_dialogflow_cx_flow.basic_flow",
+					"expressions": {
+						"description": {
+							"constant_value": "Test Flow",
+						},
+						"display_name": {
+							"constant_value": "MyFlow",
+						},
+						"event_handlers": [
+							{
+								"event": {
+									"constant_value": "custom-event",
+								},
+								"trigger_fulfillment": [
+									{
+										"messages": [
+											{
+												"text": [
+													{
+														"text": {
+															"constant_value": [
+																"I didn't get that. Can you say it again?",
+															],
+														},
+													},
+												],
+											},
+										],
+										"return_partial_responses": {
+											"constant_value": false,
+										},
+									},
+								],
+							},
+							{
+								"event": {
+									"constant_value": "sys.no-match-default",
+								},
+								"trigger_fulfillment": [
+									{
+										"messages": [
+											{
+												"text": [
+													{
+														"text": {
+															"constant_value": [
+																"Sorry, could you say that again?",
+															],
+														},
+													},
+												],
+											},
+										],
+										"return_partial_responses": {
+											"constant_value": false,
+										},
+									},
+								],
+							},
+							{
+								"event": {
+									"constant_value": "sys.no-input-default",
+								},
+								"trigger_fulfillment": [
+									{
+										"messages": [
+											{
+												"text": [
+													{
+														"text": {
+															"constant_value": [
+																"One more time?",
+															],
+														},
+													},
+												],
+											},
+										],
+										"return_partial_responses": {
+											"constant_value": false,
+										},
+									},
+								],
+							},
+						],
+						"nlu_settings": [
+							{
+								"classification_threshold": {
+									"constant_value": 0.3,
+								},
+								"model_type": {
+									"constant_value": "MODEL_TYPE_STANDARD",
+								},
+							},
+						],
+						"parent": {
+							"references": [
+								"google_dialogflow_cx_agent.agent.id",
+								"google_dialogflow_cx_agent.agent",
+							],
+						},
+					},
+					"mode":                "managed",
+					"name":                "basic_flow",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_dialogflow_cx_flow",
+				},
+				{
+					"address": "google_dialogflow_cx_intent.basic_intent",
+					"expressions": {
+						"description": {
+							"constant_value": "Intent example",
+						},
+						"display_name": {
+							"constant_value": "Example",
+						},
+						"labels": {
+							"constant_value": {
+								"label1": "value1",
+								"label2": "value2",
+							},
+						},
+						"parameters": [
+							{
+								"entity_type": {
+									"constant_value": "projects/-/locations/-/agents/-/entityTypes/sys.date",
+								},
+								"id": {
+									"constant_value": "param1",
+								},
+							},
+						],
+						"parent": {
+							"references": [
+								"google_dialogflow_cx_agent.agent.id",
+								"google_dialogflow_cx_agent.agent",
+							],
+						},
+						"priority": {
+							"constant_value": 1,
+						},
+						"training_phrases": [
+							{
+								"parts": [
+									{
+										"text": {
+											"constant_value": "training",
+										},
+									},
+									{
+										"text": {
+											"constant_value": "phrase",
+										},
+									},
+									{
+										"text": {
+											"constant_value": "example",
+										},
+									},
+								],
+								"repeat_count": {
+									"constant_value": 1,
+								},
+							},
+						],
+					},
+					"mode":                "managed",
+					"name":                "basic_intent",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_dialogflow_cx_intent",
+				},
+				{
+					"address": "google_dialogflow_cx_page.basic_page",
+					"expressions": {
+						"display_name": {
+							"constant_value": "MyPage",
+						},
+						"entry_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"text": {
+													"constant_value": [
+														"Welcome to page",
+													],
+												},
+											},
+										],
+									},
+								],
+							},
+						],
+						"form": [
+							{
+								"parameters": [
+									{
+										"display_name": {
+											"constant_value": "param1",
+										},
+										"entity_type": {
+											"constant_value": "projects/-/locations/-/agents/-/entityTypes/sys.date",
+										},
+										"fill_behavior": [
+											{
+												"initial_prompt_fulfillment": [
+													{
+														"messages": [
+															{
+																"text": [
+																	{
+																		"text": {
+																			"constant_value": [
+																				"Please provide param1",
+																			],
+																		},
+																	},
+																],
+															},
+														],
+													},
+												],
+											},
+										],
+										"redact": {
+											"constant_value": "true",
+										},
+										"required": {
+											"constant_value": "true",
+										},
+									},
+								],
+							},
+						],
+						"parent": {
+							"references": [
+								"google_dialogflow_cx_agent.agent.start_flow",
+								"google_dialogflow_cx_agent.agent",
+							],
+						},
+						"transition_routes": [
+							{
+								"condition": {
+									"constant_value": "$page.params.status = 'FINAL'",
+								},
+								"target_page": {
+									"references": [
+										"google_dialogflow_cx_page.my_page2.id",
+										"google_dialogflow_cx_page.my_page2",
+									],
+								},
+								"trigger_fulfillment": [
+									{
+										"messages": [
+											{
+												"text": [
+													{
+														"text": {
+															"constant_value": [
+																"information completed, navigating to page 2",
+															],
+														},
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+					},
+					"mode":                "managed",
+					"name":                "basic_page",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_dialogflow_cx_page",
+				},
+				{
+					"address": "google_dialogflow_cx_page.my_page2",
+					"expressions": {
+						"display_name": {
+							"constant_value": "MyPage2",
+						},
+						"parent": {
+							"references": [
+								"google_dialogflow_cx_agent.agent.start_flow",
+								"google_dialogflow_cx_agent.agent",
+							],
+						},
+					},
+					"mode":                "managed",
+					"name":                "my_page2",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_dialogflow_cx_page",
+				},
+				{
+					"address": "google_dialogflow_cx_version.version_1",
+					"expressions": {
+						"description": {
+							"constant_value": "version 1.0.0",
+						},
+						"display_name": {
+							"constant_value": "1.0.0",
+						},
+						"parent": {
+							"references": [
+								"google_dialogflow_cx_agent.agent.start_flow",
+								"google_dialogflow_cx_agent.agent",
+							],
+						},
+					},
+					"mode":                "managed",
+					"name":                "version_1",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_dialogflow_cx_version",
+				},
+			],
+			"variables": {
+				"access_token": {
+					"sensitive": true,
+				},
+				"project_id": {
+					"sensitive": true,
+				},
+			},
+		},
+	},
+	"format_version": "0.2",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":        "google_dialogflow_cx_agent.agent",
+					"mode":           "managed",
+					"name":           "agent",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"sensitive_values": {
+						"speech_to_text_settings": [
+							{},
+						],
+						"supported_language_codes": [
+							false,
+							false,
+							false,
+						],
+					},
+					"type": "google_dialogflow_cx_agent",
+					"values": {
+						"avatar_uri":                 "https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/super_cloud.png",
+						"default_language_code":      "en",
+						"description":                "Example description.",
+						"display_name":               "dialogflowcx-agent-1",
+						"enable_spell_correction":    true,
+						"enable_stackdriver_logging": true,
+						"location":                   "global",
+						"security_settings":          null,
+						"speech_to_text_settings": [
+							{
+								"enable_speech_adaptation": true,
+							},
+						],
+						"supported_language_codes": [
+							"fr",
+							"de",
+							"es",
+						],
+						"time_zone": "America/New_York",
+						"timeouts":  null,
+					},
+				},
+				{
+					"address":        "google_dialogflow_cx_agent.agent_2",
+					"mode":           "managed",
+					"name":           "agent_2",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"sensitive_values": {
+						"speech_to_text_settings": [
+							{},
+						],
+						"supported_language_codes": [
+							false,
+							false,
+							false,
+						],
+					},
+					"type": "google_dialogflow_cx_agent",
+					"values": {
+						"avatar_uri":                 "https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/super_cloud.png",
+						"default_language_code":      "en",
+						"description":                "Example description.",
+						"display_name":               "dialogflowcx-agent-2",
+						"enable_spell_correction":    true,
+						"enable_stackdriver_logging": true,
+						"location":                   "US",
+						"security_settings":          null,
+						"speech_to_text_settings": [
+							{
+								"enable_speech_adaptation": true,
+							},
+						],
+						"supported_language_codes": [
+							"fr",
+							"de",
+							"es",
+						],
+						"time_zone": "America/New_York",
+						"timeouts":  null,
+					},
+				},
+				{
+					"address":        "google_dialogflow_cx_entity_type.basic_entity_type",
+					"mode":           "managed",
+					"name":           "basic_entity_type",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"sensitive_values": {
+						"entities": [
+							{
+								"synonyms": [
+									false,
+									false,
+								],
+							},
+							{
+								"synonyms": [
+									false,
+									false,
+								],
+							},
+						],
+						"excluded_phrases": [],
+					},
+					"type": "google_dialogflow_cx_entity_type",
+					"values": {
+						"auto_expansion_mode":     null,
+						"display_name":            "MyEntity",
+						"enable_fuzzy_extraction": false,
+						"entities": [
+							{
+								"synonyms": [
+									"synonym1",
+									"synonym2",
+								],
+								"value": "value1",
+							},
+							{
+								"synonyms": [
+									"synonym3",
+									"synonym4",
+								],
+								"value": "value2",
+							},
+						],
+						"excluded_phrases": [],
+						"kind":             "KIND_MAP",
+						"language_code":    null,
+						"redact":           null,
+						"timeouts":         null,
+					},
+				},
+				{
+					"address":        "google_dialogflow_cx_environment.development",
+					"mode":           "managed",
+					"name":           "development",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"sensitive_values": {
+						"version_configs": [
+							{},
+						],
+					},
+					"type": "google_dialogflow_cx_environment",
+					"values": {
+						"description":  "Development Environment",
+						"display_name": "Development",
+						"timeouts":     null,
+						"version_configs": [
+							{},
+						],
+					},
+				},
+				{
+					"address":        "google_dialogflow_cx_flow.basic_flow",
+					"mode":           "managed",
+					"name":           "basic_flow",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"sensitive_values": {
+						"event_handlers": [
+							{
+								"trigger_fulfillment": [
+									{
+										"messages": [
+											{
+												"text": [
+													{
+														"text": [
+															false,
+														],
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+							{
+								"trigger_fulfillment": [
+									{
+										"messages": [
+											{
+												"text": [
+													{
+														"text": [
+															false,
+														],
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+							{
+								"trigger_fulfillment": [
+									{
+										"messages": [
+											{
+												"text": [
+													{
+														"text": [
+															false,
+														],
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+						"nlu_settings": [
+							{},
+						],
+						"transition_routes": [],
+					},
+					"type": "google_dialogflow_cx_flow",
+					"values": {
+						"description":  "Test Flow",
+						"display_name": "MyFlow",
+						"event_handlers": [
+							{
+								"event":       "custom-event",
+								"target_flow": null,
+								"target_page": null,
+								"trigger_fulfillment": [
+									{
+										"messages": [
+											{
+												"text": [
+													{
+														"text": [
+															"I didn't get that. Can you say it again?",
+														],
+													},
+												],
+											},
+										],
+										"return_partial_responses": false,
+										"tag":     null,
+										"webhook": null,
+									},
+								],
+							},
+							{
+								"event":       "sys.no-match-default",
+								"target_flow": null,
+								"target_page": null,
+								"trigger_fulfillment": [
+									{
+										"messages": [
+											{
+												"text": [
+													{
+														"text": [
+															"Sorry, could you say that again?",
+														],
+													},
+												],
+											},
+										],
+										"return_partial_responses": false,
+										"tag":     null,
+										"webhook": null,
+									},
+								],
+							},
+							{
+								"event":       "sys.no-input-default",
+								"target_flow": null,
+								"target_page": null,
+								"trigger_fulfillment": [
+									{
+										"messages": [
+											{
+												"text": [
+													{
+														"text": [
+															"One more time?",
+														],
+													},
+												],
+											},
+										],
+										"return_partial_responses": false,
+										"tag":     null,
+										"webhook": null,
+									},
+								],
+							},
+						],
+						"language_code": null,
+						"nlu_settings": [
+							{
+								"classification_threshold": 0.3,
+								"model_training_mode":      null,
+								"model_type":               "MODEL_TYPE_STANDARD",
+							},
+						],
+						"timeouts":                null,
+						"transition_route_groups": null,
+						"transition_routes":       [],
+					},
+				},
+				{
+					"address":        "google_dialogflow_cx_intent.basic_intent",
+					"mode":           "managed",
+					"name":           "basic_intent",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"sensitive_values": {
+						"labels": {},
+						"parameters": [
+							{},
+						],
+						"training_phrases": [
+							{
+								"parts": [
+									{},
+									{},
+									{},
+								],
+							},
+						],
+					},
+					"type": "google_dialogflow_cx_intent",
+					"values": {
+						"description":  "Intent example",
+						"display_name": "Example",
+						"is_fallback":  null,
+						"labels": {
+							"label1": "value1",
+							"label2": "value2",
+						},
+						"language_code": null,
+						"parameters": [
+							{
+								"entity_type": "projects/-/locations/-/agents/-/entityTypes/sys.date",
+								"id":          "param1",
+								"is_list":     null,
+								"redact":      null,
+							},
+						],
+						"priority": 1,
+						"timeouts": null,
+						"training_phrases": [
+							{
+								"parts": [
+									{
+										"parameter_id": null,
+										"text":         "training",
+									},
+									{
+										"parameter_id": null,
+										"text":         "phrase",
+									},
+									{
+										"parameter_id": null,
+										"text":         "example",
+									},
+								],
+								"repeat_count": 1,
+							},
+						],
+					},
+				},
+				{
+					"address":        "google_dialogflow_cx_page.basic_page",
+					"mode":           "managed",
+					"name":           "basic_page",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"sensitive_values": {
+						"entry_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"text": [
+													false,
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+						"event_handlers": [],
+						"form": [
+							{
+								"parameters": [
+									{
+										"fill_behavior": [
+											{
+												"initial_prompt_fulfillment": [
+													{
+														"messages": [
+															{
+																"text": [
+																	{
+																		"text": [
+																			false,
+																		],
+																	},
+																],
+															},
+														],
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+						"transition_routes": [
+							{
+								"trigger_fulfillment": [
+									{
+										"messages": [
+											{
+												"text": [
+													{
+														"text": [
+															false,
+														],
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+					},
+					"type": "google_dialogflow_cx_page",
+					"values": {
+						"display_name": "MyPage",
+						"entry_fulfillment": [
+							{
+								"messages": [
+									{
+										"text": [
+											{
+												"text": [
+													"Welcome to page",
+												],
+											},
+										],
+									},
+								],
+								"return_partial_responses": null,
+								"tag":     null,
+								"webhook": null,
+							},
+						],
+						"event_handlers": [],
+						"form": [
+							{
+								"parameters": [
+									{
+										"display_name": "param1",
+										"entity_type":  "projects/-/locations/-/agents/-/entityTypes/sys.date",
+										"fill_behavior": [
+											{
+												"initial_prompt_fulfillment": [
+													{
+														"messages": [
+															{
+																"text": [
+																	{
+																		"text": [
+																			"Please provide param1",
+																		],
+																	},
+																],
+															},
+														],
+														"return_partial_responses": null,
+														"tag":     null,
+														"webhook": null,
+													},
+												],
+											},
+										],
+										"is_list":  null,
+										"redact":   true,
+										"required": true,
+									},
+								],
+							},
+						],
+						"language_code":           null,
+						"timeouts":                null,
+						"transition_route_groups": null,
+						"transition_routes": [
+							{
+								"condition":   "$page.params.status = 'FINAL'",
+								"intent":      null,
+								"target_flow": null,
+								"trigger_fulfillment": [
+									{
+										"messages": [
+											{
+												"text": [
+													{
+														"text": [
+															"information completed, navigating to page 2",
+														],
+													},
+												],
+											},
+										],
+										"return_partial_responses": null,
+										"tag":     null,
+										"webhook": null,
+									},
+								],
+							},
+						],
+					},
+				},
+				{
+					"address":        "google_dialogflow_cx_page.my_page2",
+					"mode":           "managed",
+					"name":           "my_page2",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"sensitive_values": {
+						"entry_fulfillment": [],
+						"event_handlers":    [],
+						"form":              [],
+						"transition_routes": [],
+					},
+					"type": "google_dialogflow_cx_page",
+					"values": {
+						"display_name":            "MyPage2",
+						"entry_fulfillment":       [],
+						"event_handlers":          [],
+						"form":                    [],
+						"language_code":           null,
+						"timeouts":                null,
+						"transition_route_groups": null,
+						"transition_routes":       [],
+					},
+				},
+				{
+					"address":        "google_dialogflow_cx_version.version_1",
+					"mode":           "managed",
+					"name":           "version_1",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"sensitive_values": {
+						"nlu_settings": [],
+					},
+					"type": "google_dialogflow_cx_version",
+					"values": {
+						"description":  "version 1.0.0",
+						"display_name": "1.0.0",
+						"timeouts":     null,
+					},
+				},
+			],
+		},
+	},
+	"resource_changes": [
+		{
+			"address": "google_dialogflow_cx_agent.agent",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"avatar_uri":                 "https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/super_cloud.png",
+					"default_language_code":      "en",
+					"description":                "Example description.",
+					"display_name":               "dialogflowcx-agent-1",
+					"enable_spell_correction":    true,
+					"enable_stackdriver_logging": true,
+					"location":                   "global",
+					"security_settings":          null,
+					"speech_to_text_settings": [
+						{
+							"enable_speech_adaptation": true,
+						},
+					],
+					"supported_language_codes": [
+						"fr",
+						"de",
+						"es",
+					],
+					"time_zone": "America/New_York",
+					"timeouts":  null,
+				},
+				"after_sensitive": {
+					"speech_to_text_settings": [
+						{},
+					],
+					"supported_language_codes": [
+						false,
+						false,
+						false,
+					],
+				},
+				"after_unknown": {
+					"id":      true,
+					"name":    true,
+					"project": true,
+					"speech_to_text_settings": [
+						{},
+					],
+					"start_flow": true,
+					"supported_language_codes": [
+						false,
+						false,
+						false,
+					],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "agent",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_dialogflow_cx_agent",
+		},
+		{
+			"address": "google_dialogflow_cx_agent.agent_2",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"avatar_uri":                 "https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/super_cloud.png",
+					"default_language_code":      "en",
+					"description":                "Example description.",
+					"display_name":               "dialogflowcx-agent-2",
+					"enable_spell_correction":    true,
+					"enable_stackdriver_logging": true,
+					"location":                   "US",
+					"security_settings":          null,
+					"speech_to_text_settings": [
+						{
+							"enable_speech_adaptation": true,
+						},
+					],
+					"supported_language_codes": [
+						"fr",
+						"de",
+						"es",
+					],
+					"time_zone": "America/New_York",
+					"timeouts":  null,
+				},
+				"after_sensitive": {
+					"speech_to_text_settings": [
+						{},
+					],
+					"supported_language_codes": [
+						false,
+						false,
+						false,
+					],
+				},
+				"after_unknown": {
+					"id":      true,
+					"name":    true,
+					"project": true,
+					"speech_to_text_settings": [
+						{},
+					],
+					"start_flow": true,
+					"supported_language_codes": [
+						false,
+						false,
+						false,
+					],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "agent_2",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_dialogflow_cx_agent",
+		},
+		{
+			"address": "google_dialogflow_cx_entity_type.basic_entity_type",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"auto_expansion_mode":     null,
+					"display_name":            "MyEntity",
+					"enable_fuzzy_extraction": false,
+					"entities": [
+						{
+							"synonyms": [
+								"synonym1",
+								"synonym2",
+							],
+							"value": "value1",
+						},
+						{
+							"synonyms": [
+								"synonym3",
+								"synonym4",
+							],
+							"value": "value2",
+						},
+					],
+					"excluded_phrases": [],
+					"kind":             "KIND_MAP",
+					"language_code":    null,
+					"redact":           null,
+					"timeouts":         null,
+				},
+				"after_sensitive": {
+					"entities": [
+						{
+							"synonyms": [
+								false,
+								false,
+							],
+						},
+						{
+							"synonyms": [
+								false,
+								false,
+							],
+						},
+					],
+					"excluded_phrases": [],
+				},
+				"after_unknown": {
+					"entities": [
+						{
+							"synonyms": [
+								false,
+								false,
+							],
+						},
+						{
+							"synonyms": [
+								false,
+								false,
+							],
+						},
+					],
+					"excluded_phrases": [],
+					"id":               true,
+					"name":             true,
+					"parent":           true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "basic_entity_type",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_dialogflow_cx_entity_type",
+		},
+		{
+			"address": "google_dialogflow_cx_environment.development",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"description":  "Development Environment",
+					"display_name": "Development",
+					"timeouts":     null,
+					"version_configs": [
+						{},
+					],
+				},
+				"after_sensitive": {
+					"version_configs": [
+						{},
+					],
+				},
+				"after_unknown": {
+					"id":          true,
+					"name":        true,
+					"parent":      true,
+					"update_time": true,
+					"version_configs": [
+						{
+							"version": true,
+						},
+					],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "development",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_dialogflow_cx_environment",
+		},
+		{
+			"address": "google_dialogflow_cx_flow.basic_flow",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"description":  "Test Flow",
+					"display_name": "MyFlow",
+					"event_handlers": [
+						{
+							"event":       "custom-event",
+							"target_flow": null,
+							"target_page": null,
+							"trigger_fulfillment": [
+								{
+									"messages": [
+										{
+											"text": [
+												{
+													"text": [
+														"I didn't get that. Can you say it again?",
+													],
+												},
+											],
+										},
+									],
+									"return_partial_responses": false,
+									"tag":     null,
+									"webhook": null,
+								},
+							],
+						},
+						{
+							"event":       "sys.no-match-default",
+							"target_flow": null,
+							"target_page": null,
+							"trigger_fulfillment": [
+								{
+									"messages": [
+										{
+											"text": [
+												{
+													"text": [
+														"Sorry, could you say that again?",
+													],
+												},
+											],
+										},
+									],
+									"return_partial_responses": false,
+									"tag":     null,
+									"webhook": null,
+								},
+							],
+						},
+						{
+							"event":       "sys.no-input-default",
+							"target_flow": null,
+							"target_page": null,
+							"trigger_fulfillment": [
+								{
+									"messages": [
+										{
+											"text": [
+												{
+													"text": [
+														"One more time?",
+													],
+												},
+											],
+										},
+									],
+									"return_partial_responses": false,
+									"tag":     null,
+									"webhook": null,
+								},
+							],
+						},
+					],
+					"language_code": null,
+					"nlu_settings": [
+						{
+							"classification_threshold": 0.3,
+							"model_training_mode":      null,
+							"model_type":               "MODEL_TYPE_STANDARD",
+						},
+					],
+					"timeouts":                null,
+					"transition_route_groups": null,
+					"transition_routes":       [],
+				},
+				"after_sensitive": {
+					"event_handlers": [
+						{
+							"trigger_fulfillment": [
+								{
+									"messages": [
+										{
+											"text": [
+												{
+													"text": [
+														false,
+													],
+												},
+											],
+										},
+									],
+								},
+							],
+						},
+						{
+							"trigger_fulfillment": [
+								{
+									"messages": [
+										{
+											"text": [
+												{
+													"text": [
+														false,
+													],
+												},
+											],
+										},
+									],
+								},
+							],
+						},
+						{
+							"trigger_fulfillment": [
+								{
+									"messages": [
+										{
+											"text": [
+												{
+													"text": [
+														false,
+													],
+												},
+											],
+										},
+									],
+								},
+							],
+						},
+					],
+					"nlu_settings": [
+						{},
+					],
+					"transition_routes": [],
+				},
+				"after_unknown": {
+					"event_handlers": [
+						{
+							"name": true,
+							"trigger_fulfillment": [
+								{
+									"messages": [
+										{
+											"text": [
+												{
+													"allow_playback_interruption": true,
+													"text": [
+														false,
+													],
+												},
+											],
+										},
+									],
+								},
+							],
+						},
+						{
+							"name": true,
+							"trigger_fulfillment": [
+								{
+									"messages": [
+										{
+											"text": [
+												{
+													"allow_playback_interruption": true,
+													"text": [
+														false,
+													],
+												},
+											],
+										},
+									],
+								},
+							],
+						},
+						{
+							"name": true,
+							"trigger_fulfillment": [
+								{
+									"messages": [
+										{
+											"text": [
+												{
+													"allow_playback_interruption": true,
+													"text": [
+														false,
+													],
+												},
+											],
+										},
+									],
+								},
+							],
+						},
+					],
+					"id":   true,
+					"name": true,
+					"nlu_settings": [
+						{},
+					],
+					"parent":            true,
+					"transition_routes": [],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "basic_flow",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_dialogflow_cx_flow",
+		},
+		{
+			"address": "google_dialogflow_cx_intent.basic_intent",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"description":  "Intent example",
+					"display_name": "Example",
+					"is_fallback":  null,
+					"labels": {
+						"label1": "value1",
+						"label2": "value2",
+					},
+					"language_code": null,
+					"parameters": [
+						{
+							"entity_type": "projects/-/locations/-/agents/-/entityTypes/sys.date",
+							"id":          "param1",
+							"is_list":     null,
+							"redact":      null,
+						},
+					],
+					"priority": 1,
+					"timeouts": null,
+					"training_phrases": [
+						{
+							"parts": [
+								{
+									"parameter_id": null,
+									"text":         "training",
+								},
+								{
+									"parameter_id": null,
+									"text":         "phrase",
+								},
+								{
+									"parameter_id": null,
+									"text":         "example",
+								},
+							],
+							"repeat_count": 1,
+						},
+					],
+				},
+				"after_sensitive": {
+					"labels": {},
+					"parameters": [
+						{},
+					],
+					"training_phrases": [
+						{
+							"parts": [
+								{},
+								{},
+								{},
+							],
+						},
+					],
+				},
+				"after_unknown": {
+					"id":     true,
+					"labels": {},
+					"name":   true,
+					"parameters": [
+						{},
+					],
+					"parent": true,
+					"training_phrases": [
+						{
+							"id": true,
+							"parts": [
+								{},
+								{},
+								{},
+							],
+						},
+					],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "basic_intent",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_dialogflow_cx_intent",
+		},
+		{
+			"address": "google_dialogflow_cx_page.basic_page",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"display_name": "MyPage",
+					"entry_fulfillment": [
+						{
+							"messages": [
+								{
+									"text": [
+										{
+											"text": [
+												"Welcome to page",
+											],
+										},
+									],
+								},
+							],
+							"return_partial_responses": null,
+							"tag":     null,
+							"webhook": null,
+						},
+					],
+					"event_handlers": [],
+					"form": [
+						{
+							"parameters": [
+								{
+									"display_name": "param1",
+									"entity_type":  "projects/-/locations/-/agents/-/entityTypes/sys.date",
+									"fill_behavior": [
+										{
+											"initial_prompt_fulfillment": [
+												{
+													"messages": [
+														{
+															"text": [
+																{
+																	"text": [
+																		"Please provide param1",
+																	],
+																},
+															],
+														},
+													],
+													"return_partial_responses": null,
+													"tag":     null,
+													"webhook": null,
+												},
+											],
+										},
+									],
+									"is_list":  null,
+									"redact":   true,
+									"required": true,
+								},
+							],
+						},
+					],
+					"language_code":           null,
+					"timeouts":                null,
+					"transition_route_groups": null,
+					"transition_routes": [
+						{
+							"condition":   "$page.params.status = 'FINAL'",
+							"intent":      null,
+							"target_flow": null,
+							"trigger_fulfillment": [
+								{
+									"messages": [
+										{
+											"text": [
+												{
+													"text": [
+														"information completed, navigating to page 2",
+													],
+												},
+											],
+										},
+									],
+									"return_partial_responses": null,
+									"tag":     null,
+									"webhook": null,
+								},
+							],
+						},
+					],
+				},
+				"after_sensitive": {
+					"entry_fulfillment": [
+						{
+							"messages": [
+								{
+									"text": [
+										{
+											"text": [
+												false,
+											],
+										},
+									],
+								},
+							],
+						},
+					],
+					"event_handlers": [],
+					"form": [
+						{
+							"parameters": [
+								{
+									"fill_behavior": [
+										{
+											"initial_prompt_fulfillment": [
+												{
+													"messages": [
+														{
+															"text": [
+																{
+																	"text": [
+																		false,
+																	],
+																},
+															],
+														},
+													],
+												},
+											],
+										},
+									],
+								},
+							],
+						},
+					],
+					"transition_routes": [
+						{
+							"trigger_fulfillment": [
+								{
+									"messages": [
+										{
+											"text": [
+												{
+													"text": [
+														false,
+													],
+												},
+											],
+										},
+									],
+								},
+							],
+						},
+					],
+				},
+				"after_unknown": {
+					"entry_fulfillment": [
+						{
+							"messages": [
+								{
+									"text": [
+										{
+											"allow_playback_interruption": true,
+											"text": [
+												false,
+											],
+										},
+									],
+								},
+							],
+						},
+					],
+					"event_handlers": [],
+					"form": [
+						{
+							"parameters": [
+								{
+									"fill_behavior": [
+										{
+											"initial_prompt_fulfillment": [
+												{
+													"messages": [
+														{
+															"text": [
+																{
+																	"allow_playback_interruption": true,
+																	"text": [
+																		false,
+																	],
+																},
+															],
+														},
+													],
+												},
+											],
+										},
+									],
+								},
+							],
+						},
+					],
+					"id":     true,
+					"name":   true,
+					"parent": true,
+					"transition_routes": [
+						{
+							"name":        true,
+							"target_page": true,
+							"trigger_fulfillment": [
+								{
+									"messages": [
+										{
+											"text": [
+												{
+													"allow_playback_interruption": true,
+													"text": [
+														false,
+													],
+												},
+											],
+										},
+									],
+								},
+							],
+						},
+					],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "basic_page",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_dialogflow_cx_page",
+		},
+		{
+			"address": "google_dialogflow_cx_page.my_page2",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"display_name":            "MyPage2",
+					"entry_fulfillment":       [],
+					"event_handlers":          [],
+					"form":                    [],
+					"language_code":           null,
+					"timeouts":                null,
+					"transition_route_groups": null,
+					"transition_routes":       [],
+				},
+				"after_sensitive": {
+					"entry_fulfillment": [],
+					"event_handlers":    [],
+					"form":              [],
+					"transition_routes": [],
+				},
+				"after_unknown": {
+					"entry_fulfillment": [],
+					"event_handlers":    [],
+					"form":              [],
+					"id":                true,
+					"name":              true,
+					"parent":            true,
+					"transition_routes": [],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "my_page2",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_dialogflow_cx_page",
+		},
+		{
+			"address": "google_dialogflow_cx_version.version_1",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"description":  "version 1.0.0",
+					"display_name": "1.0.0",
+					"timeouts":     null,
+				},
+				"after_sensitive": {
+					"nlu_settings": [],
+				},
+				"after_unknown": {
+					"create_time":  true,
+					"id":           true,
+					"name":         true,
+					"nlu_settings": true,
+					"parent":       true,
+					"state":        true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "version_1",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_dialogflow_cx_version",
+		},
+	],
+	"terraform_version": "1.0.9",
+	"variables": {
+		"access_token": {
+			"value": "REDACTED_SENSITIVE",
+		},
+		"project_id": {
+			"value": "REDACTED_SENSITIVE",
+		},
+	},
+}

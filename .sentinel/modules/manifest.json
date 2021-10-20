@@ -1,0 +1,10 @@
+{
+	"records": [
+		{
+			"key": "tfplan-functions",
+			"source": "./tfplan-functions.sentinel",
+			"sourceSum": "",
+			"dest": "/home/tiwarabhishek/dialogflow_gcp/tfplan-functions.sentinel"
+		}
+	]
+}

@@ -1,0 +1,10 @@
+{
+	"records": [
+		{
+			"key": "gcp_dialogflow_region",
+			"source": "./gcp_dialogflow_region.sentinel",
+			"sourceSum": "",
+			"dest": "/home/tiwarabhishek/dialogflow_gcp/gcp_dialogflow_region.sentinel"
+		}
+	]
+}

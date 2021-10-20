@@ -1,0 +1,49 @@
+#This policy uses the Sentinel tfplan/v2 import to require that
+# all GCE compute instances have all mandatory labels
+
+# Note that the comparison is case-sensitive but also that GCE labels are only
+# allowed to contain lowercase letters, numbers, hypens, and underscores.
+
+# Import tfplan-functions.sentinel
+# with alias "plan"
+import "tfplan-functions" as plan
+import "tfplan-functions" as plan
+import "strings"
+import "types"
+
+prefix = "US"
+global_region = "global"
+
+
+# Get all dialogflow Resources
+all_df_Resources = plan.find_resources("google_dialogflow_cx_agent")
+
+location_messages = {}
+for all_df_Resources as address, rc {
+	df_location = plan.evaluate_attribute(rc.change.after, "location")
+
+	print(df_location)
+
+	if types.type_of(df_location) is null {
+
+		location_messages[address] = " region with value " + df_location + " which is not allowed"
+		print(location_messages)
+
+	} else {
+
+		if df_location == global_region or strings.has_prefix(df_location, prefix) {
+
+		} else {
+
+			location_messages[address] = "Resource " + address + " has region other than US or GLOBAL"
+			print(location_messages)
+
+		}
+	}
+}
+
+GCP_DIALOGFLOW_REGION = rule { length(location_messages) is 0 }
+
+
+# Main rule
+main = rule { GCP_DIALOGFLOW_REGION }
