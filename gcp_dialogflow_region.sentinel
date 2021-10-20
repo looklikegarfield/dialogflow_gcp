@@ -7,7 +7,6 @@
 # Import tfplan-functions.sentinel
 # with alias "plan"
 import "tfplan-functions" as plan
-import "tfplan-functions" as plan
 import "strings"
 import "types"
 
