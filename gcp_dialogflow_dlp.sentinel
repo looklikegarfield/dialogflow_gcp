@@ -24,12 +24,12 @@ for all_df_Resources as address, rc {
 	} else {
 
 		if dlp_security is not null {
-            print("The value is " + dlp_security )
+            print("The value for google_dialogflow_cx_agent.security_settings is " + dlp_security )
 
 		} else {
 
 			dlp_messages[address] = rc
-			print("Please enter correct value for security_settings")
+			print("Please enter correct value for parameter security_settings in google_dialogflow_cx_agent !!!")
 
 		}
 	}
