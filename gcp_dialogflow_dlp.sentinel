@@ -1,0 +1,42 @@
+
+#This policy uses the Sentinel tfplan/v2 import to require that
+
+# Import tfplan-functions.sentinel
+# with alias "plan"
+import "tfplan-functions" as plan
+import "types"
+
+# Get all dialogflow Resources
+all_df_Resources = plan.find_resources("google_dialogflow_cx_agent")
+
+dlp_messages = {}
+for all_df_Resources as address, rc {
+	dlp_security = plan.evaluate_attribute(rc.change.after, "security_settings")
+
+	is_dlp_security_null = rule { types.type_of(dlp_security) is "null" }
+	#print (is_dlp_security_null )
+
+	if is_dlp_security_null is true {
+
+		dlp_messages[address] = rc
+		print(" security_settings with value "null" is not allowed ")
+
+	} else {
+
+		if dlp_security is not null {
+            print("The value is " + dlp_security )
+
+		} else {
+
+			dlp_messages[address] = rc
+			print("Please enter correct value for security_settings")
+
+		}
+	}
+
+}
+
+GCP_DIALOGFLOW_DLP = rule { length(dlp_messages) is 0 }
+
+# Main rule
+main = rule { GCP_DIALOGFLOW_DLP }

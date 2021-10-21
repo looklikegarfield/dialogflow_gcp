@@ -20,6 +20,7 @@ resource "google_dialogflow_cx_agent" "agent_2" {
   supported_language_codes = ["fr","de","es"]
   time_zone = "America/New_York"
   description = "Example description."
+  security_settings = 
   avatar_uri = "https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/super_cloud.png"
   enable_stackdriver_logging = true
   enable_spell_correction    = true
